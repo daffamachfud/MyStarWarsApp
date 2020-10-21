@@ -1,0 +1,18 @@
+<resources>
+    <string name="app_name">MyStarWarsApp</string>
+    <string name="title_home">Home</string>
+    <string name="title_dashboard">Dashboard</string>
+    <string name="title_notifications">Notifications</string>
+    <string name="catalogue">Catalogue</string>
+    <string name="profile">Profile</string>
+    <string name="news_update">News Update</string>
+    <string name="view_more">View More</string>
+    <string name="title">title</string>
+    <string name="description">description</string>
+    <string name="people">People</string>
+    <string name="films">Films</string>
+    <string name="starship">Starship</string>
+    <string name="vehicles">Vehicles</string>
+    <string name="species">Species</string>
+    <string name="planet">Planet</string>
+</resources>
