@@ -1,5 +1,6 @@
 package com.onoh.mystarwarsapp.ui.people
 
+import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -9,7 +10,7 @@ import com.bumptech.glide.request.RequestOptions
 import com.onoh.mystarwarsapp.R
 import com.onoh.mystarwarsapp.data.local.PeopleEntity
 import com.onoh.mystarwarsapp.data.remote.result.PeopleResult
-import kotlinx.android.synthetic.main.item_film.view.*
+import com.onoh.mystarwarsapp.ui.detail.detailpeople.DetailProfileActivity
 import kotlinx.android.synthetic.main.item_people.view.*
 
 class PeopleAdapter  : RecyclerView.Adapter<PeopleAdapter.PeopleViewHolder>(){
@@ -32,13 +33,13 @@ class PeopleAdapter  : RecyclerView.Adapter<PeopleAdapter.PeopleViewHolder>(){
     override fun onBindViewHolder(holder: PeopleViewHolder, position: Int) {
         val new = listPeople[position]
         val dummy = listDummy[position]
-        holder.bind(new,dummy)
+        holder.bind(new,dummy,position+1)
     }
 
     override fun getItemCount(): Int = listPeople.size
 
-    class PeopleViewHolder(itemview: View): RecyclerView.ViewHolder(itemview){
-        fun bind(people: PeopleResult,dummy:PeopleEntity) {
+    class PeopleViewHolder(itemview: View): RecyclerView.ViewHolder(itemview) {
+        fun bind(people: PeopleResult,dummy:PeopleEntity,position: Int) {
             with(itemView) {
                 tv_name_people.text = people.name
                 Glide.with(context)
@@ -47,14 +48,16 @@ class PeopleAdapter  : RecyclerView.Adapter<PeopleAdapter.PeopleViewHolder>(){
                         RequestOptions.placeholderOf(R.drawable.ic_error)
                             .error(R.drawable.ic_error))
                     .into(img_people)
-//                setOnClickListener {
-//                    val intent = Intent(context, DetailMovieActivity::class.java).apply {
-//                        putExtra(DetailMovieActivity.EXTRA_MOVIE, movie.movieId)
-//                    }
-//                    context.startActivity(intent)
-//                }
-
+                setOnClickListener{
+                    val intent = Intent(context, DetailProfileActivity::class.java).apply {
+                        putExtra(DetailProfileActivity.EXTRA_PEOPLE, position)
+                    }
+                    context.startActivity(intent)
+                }
             }
+
         }
+
+
     }
 }

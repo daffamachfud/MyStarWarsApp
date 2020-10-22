@@ -6,12 +6,8 @@ import android.view.View
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.onoh.mystarwarsapp.R
-import com.onoh.mystarwarsapp.ui.species.SpeciesAdapter
-import com.onoh.mystarwarsapp.ui.species.SpeciesViewModel
 import kotlinx.android.synthetic.main.activity_planet.*
-import kotlinx.android.synthetic.main.activity_species.*
 import kotlinx.android.synthetic.main.activity_species.progressBar
-import kotlinx.android.synthetic.main.activity_starship.*
 
 class PlanetActivity : AppCompatActivity() {
     private lateinit var adapter: PlanetAdapter

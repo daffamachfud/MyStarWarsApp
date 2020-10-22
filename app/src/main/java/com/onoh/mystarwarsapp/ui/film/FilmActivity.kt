@@ -7,7 +7,6 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.onoh.mystarwarsapp.R
 import kotlinx.android.synthetic.main.activity_film.*
-import kotlinx.android.synthetic.main.activity_people.*
 import kotlinx.android.synthetic.main.activity_people.progressBar
 
 class FilmActivity : AppCompatActivity() {

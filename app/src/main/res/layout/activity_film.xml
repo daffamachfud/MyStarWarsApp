@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:background="@color/colorPrimary"
+    android:background="@color/colorPrimaryDark"
     tools:context=".ui.film.FilmActivity">
     <ProgressBar
         android:id="@+id/progressBar"
@@ -39,7 +39,8 @@
                         android:layout_width="100dp"
                         android:layout_marginEnd="20dp"
                         android:layout_height="wrap_content"
-                        android:src="@drawable/logostarwars" />
+                        android:src="@drawable/logostarwars"
+                        tools:ignore="ContentDescription" />
                 </RelativeLayout>
             </com.google.android.material.appbar.MaterialToolbar>
         </com.google.android.material.appbar.AppBarLayout>

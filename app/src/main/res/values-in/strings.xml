@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">MyStarWarsApp</string>
+    <string name="title_home">Beranda</string>
+    <string name="title_dashboard">Dashboard</string>
+    <string name="title_notifications">Notifications</string>
+    <string name="catalogue">Katalog</string>
+    <string name="profile">Profil</string>
+    <string name="news_update">Berita Terbaru</string>
+    <string name="view_more">Lihat Selengkapnya</string>
+    <string name="title">judul</string>
+    <string name="description">keterangan</string>
+    <string name="people">Tokoh</string>
+    <string name="films">Film</string>
+    <string name="starship">Pesawat Luar Angkasa</string>
+    <string name="vehicles">Kendaraan</string>
+    <string name="species">Spesies</string>
+    <string name="planet">Planet</string>
+    <string name="made_by">Dibuat Oleh</string>
+    <string name="daffa_radifanka">Daffa Radifanka</string>
+    <string name="choose_your_language">Pilih Bahasa Kamu</string>
+    <string name="high_rating_movie">Film Teratas</string>
+    <string name="click_detail">Klik lihat selengkapnya untuk lanjut</string>
+    <string name="data_not_found">Data Detail Tidak Ditemukan!</string>
+    <string name="page_error">Halaman detail untuk saat ini tidak bisa di akses</string>
+
+    <string name="gender">Gender :</string>
+    <string name="gender_dummy">Male</string>
+    <string name="birth_day">Birth Day:</string>
+    <string name="height">Height:</string>
+    <string name="mass">Mass:</string>
+    <string name="name">Name</string>
+    <string name="description_detail">Description :</string>
+    <string name="release_date">Release date:</string>
+    <string name="director_detail">Director:</string>
+    <string name="producer_detail">Producer:</string>
+    <string name="model_detail">Model:</string>
+    <string name="manufacturer_detail">Manufacturer:</string>
+    <string name="length_detail">Length:</string>
+    <string name="passenger">Passenger:</string>
+    <string name="cargo_capicity_detail">Cargo Capicity:</string>
+    <string name="classification_detail">Classification:</string>
+    <string name="designation_detail">Designation:</string>
+    <string name="language">Language:</string>
+    <string name="credit">Credit</string>
+    <string name="resource_gif_uazi">Resource GIF : Uazi</string>
+    <string name="resource_api_swapi_dev">Resource API : SWAPI.dev</string>
+    <string name="resource_image_starwars_com_databank">Resource Image : Starwars.com/databank</string>
+
+</resources>

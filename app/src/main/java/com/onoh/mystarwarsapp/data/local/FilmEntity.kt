@@ -1,6 +1,8 @@
 package com.onoh.mystarwarsapp.data.local
 
 data class FilmEntity(
-    val title:String,
-    val imagePath:String
+    var id:String,
+    var title:String,
+    var description:String,
+    var imagePath:String
 )

@@ -3,17 +3,13 @@ package com.onoh.mystarwarsapp.ui.starship
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.bumptech.glide.request.RequestOptions
 import com.onoh.mystarwarsapp.R
 import com.onoh.mystarwarsapp.data.local.StarshipEntity
-import com.onoh.mystarwarsapp.data.remote.response.StartshipResponse
-import com.onoh.mystarwarsapp.data.remote.result.PeopleResult
 import com.onoh.mystarwarsapp.data.remote.result.StarshipResult
-import com.onoh.mystarwarsapp.ui.people.PeopleAdapter
-import kotlinx.android.synthetic.main.item_film.view.*
-import kotlinx.android.synthetic.main.item_people.view.*
 import kotlinx.android.synthetic.main.item_starship.view.*
 
 class StarshipAdapter : RecyclerView.Adapter<StarshipAdapter.StarViewHolder>(){
@@ -52,12 +48,9 @@ class StarshipAdapter : RecyclerView.Adapter<StarshipAdapter.StarViewHolder>(){
                         RequestOptions.placeholderOf(R.drawable.ic_error)
                             .error(R.drawable.ic_error))
                     .into(img_starship)
-//                setOnClickListener {
-//                    val intent = Intent(context, DetailMovieActivity::class.java).apply {
-//                        putExtra(DetailMovieActivity.EXTRA_MOVIE, movie.movieId)
-//                    }
-//                    context.startActivity(intent)
-//                }
+                setOnClickListener {
+                    Toast.makeText(context,resources.getString(R.string.page_error),Toast.LENGTH_LONG).show()
+                }
 
             }
         }

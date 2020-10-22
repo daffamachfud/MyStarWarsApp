@@ -5,12 +5,8 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.onoh.mystarwarsapp.data.local.SpeciesEntity
-import com.onoh.mystarwarsapp.data.remote.response.PeopleResponse
 import com.onoh.mystarwarsapp.data.remote.response.SpeciesResponse
-import com.onoh.mystarwarsapp.data.remote.response.StartshipResponse
-import com.onoh.mystarwarsapp.data.remote.result.PeopleResult
 import com.onoh.mystarwarsapp.data.remote.result.SpeciesResult
-import com.onoh.mystarwarsapp.data.remote.result.StarshipResult
 import com.onoh.mystarwarsapp.network.RetrofitClient
 import com.onoh.mystarwarsapp.utils.DataDummy
 import retrofit2.Call

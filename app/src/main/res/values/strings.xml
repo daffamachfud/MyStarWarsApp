@@ -15,4 +15,34 @@
     <string name="vehicles">Vehicles</string>
     <string name="species">Species</string>
     <string name="planet">Planet</string>
+    <string name="made_by">MADE BY</string>
+    <string name="daffa_radifanka">Daffa Radifanka</string>
+    <string name="choose_your_language">Choose your language</string>
+    <string name="high_rating_movie">High Rating Movie</string>
+    <string name="click_detail">Click view more to continue</string>
+    <string name="data_not_found">Data Detail Not Found!</string>
+    <string name="page_error">The page is currently inaccessible</string>
+
+    <string name="gender">Gender :</string>
+    <string name="gender_dummy">Male</string>
+    <string name="birth_day">Birth Day:</string>
+    <string name="height">Height:</string>
+    <string name="mass">Mass:</string>
+    <string name="name">Name</string>
+    <string name="description_detail">Description :</string>
+    <string name="release_date">Release date:</string>
+    <string name="director_detail">Director:</string>
+    <string name="producer_detail">Producer:</string>
+    <string name="model_detail">Model:</string>
+    <string name="manufacturer_detail">Manufacturer:</string>
+    <string name="length_detail">Length:</string>
+    <string name="passenger">Passenger:</string>
+    <string name="cargo_capicity_detail">Cargo Capicity:</string>
+    <string name="classification_detail">Classification:</string>
+    <string name="designation_detail">Designation:</string>
+    <string name="language">Language:</string>
+    <string name="credit">Credit</string>
+    <string name="resource_gif_uazi">Resource GIF : Uazi</string>
+    <string name="resource_api_swapi_dev">Resource API : SWAPI.dev</string>
+    <string name="resource_image_starwars_com_databank">Resource Image : Starwars.com/databank</string>
 </resources>

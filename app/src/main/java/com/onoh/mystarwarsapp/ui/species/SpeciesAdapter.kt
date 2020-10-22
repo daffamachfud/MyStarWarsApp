@@ -1,5 +1,6 @@
 package com.onoh.mystarwarsapp.ui.species
 
+import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -9,9 +10,8 @@ import com.bumptech.glide.request.RequestOptions
 import com.onoh.mystarwarsapp.R
 import com.onoh.mystarwarsapp.data.local.SpeciesEntity
 import com.onoh.mystarwarsapp.data.remote.result.SpeciesResult
-import com.onoh.mystarwarsapp.data.remote.result.StarshipResult
+import com.onoh.mystarwarsapp.ui.detail.detailspesies.DetailSpeciesActivity
 import kotlinx.android.synthetic.main.item_species.view.*
-import kotlinx.android.synthetic.main.item_starship.view.*
 
 class SpeciesAdapter : RecyclerView.Adapter<SpeciesAdapter.ViewHolder>(){
     private var listSpecies = ArrayList<SpeciesResult>()
@@ -33,13 +33,13 @@ class SpeciesAdapter : RecyclerView.Adapter<SpeciesAdapter.ViewHolder>(){
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val new = listSpecies[position]
         val dummy = listDummy[position]
-        holder.bind(new,dummy)
+        holder.bind(new,dummy,position+1)
     }
 
     override fun getItemCount(): Int = listSpecies.size
 
     class ViewHolder(itemview: View): RecyclerView.ViewHolder(itemview){
-        fun bind(species: SpeciesResult,dummy:SpeciesEntity) {
+        fun bind(species: SpeciesResult,dummy:SpeciesEntity,position: Int) {
             with(itemView) {
                 tv_name_species.text = species.name
                 tv_classification_species.text = species.classification
@@ -49,12 +49,12 @@ class SpeciesAdapter : RecyclerView.Adapter<SpeciesAdapter.ViewHolder>(){
                         RequestOptions.placeholderOf(R.drawable.ic_error)
                             .error(R.drawable.ic_error))
                     .into(img_species)
-//                setOnClickListener {
-//                    val intent = Intent(context, DetailMovieActivity::class.java).apply {
-//                        putExtra(DetailMovieActivity.EXTRA_MOVIE, movie.movieId)
-//                    }
-//                    context.startActivity(intent)
-//                }
+                setOnClickListener {
+                    val intent = Intent(context, DetailSpeciesActivity::class.java).apply {
+                        putExtra(DetailSpeciesActivity.EXTRA_SPECIES, position)
+                    }
+                    context.startActivity(intent)
+                }
 
             }
         }

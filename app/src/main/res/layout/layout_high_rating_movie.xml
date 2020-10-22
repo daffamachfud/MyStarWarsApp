@@ -3,7 +3,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:tools="http://schemas.android.com/tools"
-    android:background="@color/colorPrimary"
+    android:background="@drawable/spacebackground"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <RelativeLayout
@@ -21,7 +21,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="High Rating Movie"
+            android:text="@string/high_rating_movie"
             android:textColor="@color/colorText"
             android:textSize="18sp"
             android:textStyle="bold" />
@@ -34,7 +34,8 @@
             android:layout_centerVertical="true"
             android:text="@string/view_more"
             android:textColor="@color/colorSecondaryText"
-            android:textSize="12sp" />
+            android:textSize="12sp"
+            tools:ignore="RelativeOverlap" />
 
     </RelativeLayout>
 

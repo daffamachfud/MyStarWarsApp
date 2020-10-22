@@ -1,5 +1,6 @@
 package com.onoh.mystarwarsapp.ui.film
 
+import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -9,10 +10,8 @@ import com.bumptech.glide.request.RequestOptions
 import com.onoh.mystarwarsapp.R
 import com.onoh.mystarwarsapp.data.local.FilmEntity
 import com.onoh.mystarwarsapp.data.remote.result.FilmResult
-import com.onoh.mystarwarsapp.data.remote.result.PeopleResult
+import com.onoh.mystarwarsapp.ui.detail.detailfilm.DetailFilmActivity
 import kotlinx.android.synthetic.main.item_film.view.*
-import kotlinx.android.synthetic.main.item_news.view.*
-import kotlinx.android.synthetic.main.item_people.view.*
 
 class FilmAdapter  : RecyclerView.Adapter<FilmAdapter.FilmViewHolder>(){
     private var listFilm = ArrayList<FilmResult>()
@@ -34,13 +33,13 @@ class FilmAdapter  : RecyclerView.Adapter<FilmAdapter.FilmViewHolder>(){
     override fun onBindViewHolder(holder: FilmViewHolder, position: Int) {
         val film = listFilm[position]
         val dummy = listDummy[position]
-        holder.bind(film,dummy)
+        holder.bind(film,dummy,position+1)
     }
 
     override fun getItemCount(): Int = listFilm.size
 
     class FilmViewHolder(itemview: View): RecyclerView.ViewHolder(itemview){
-        fun bind(film: FilmResult,dummy:FilmEntity) {
+        fun bind(film: FilmResult,dummy:FilmEntity,position: Int) {
             with(itemView) {
                 tv_title_film.text = film.title
                 tv_desc_film.text = film.openingCrawl
@@ -50,13 +49,12 @@ class FilmAdapter  : RecyclerView.Adapter<FilmAdapter.FilmViewHolder>(){
                         RequestOptions.placeholderOf(R.drawable.ic_error)
                             .error(R.drawable.ic_error))
                     .into(img_poster)
-//                setOnClickListener {
-//                    val intent = Intent(context, DetailMovieActivity::class.java).apply {
-//                        putExtra(DetailMovieActivity.EXTRA_MOVIE, movie.movieId)
-//                    }
-//                    context.startActivity(intent)
-//                }
-
+              setOnClickListener{
+                    val intent = Intent(context, DetailFilmActivity::class.java).apply {
+                        putExtra(DetailFilmActivity.EXTRA_FILM, position)
+                    }
+                    context.startActivity(intent)
+                }
             }
         }
     }

@@ -20,5 +20,5 @@ data class StarshipResult(
     @field:SerializedName("films") val films : List<String>?=null,
     @field:SerializedName("created") val created : String?=null,
     @field:SerializedName("edited") val edited : String?=null,
-    @field:SerializedName("url") val url : String?=null
+    @field:SerializedName("url") val url : String?=null,
 )

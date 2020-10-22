@@ -3,16 +3,14 @@ package com.onoh.mystarwarsapp.ui.planet
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.bumptech.glide.request.RequestOptions
 import com.onoh.mystarwarsapp.R
 import com.onoh.mystarwarsapp.data.local.PlanetEntity
 import com.onoh.mystarwarsapp.data.remote.result.PlanetResult
-import com.onoh.mystarwarsapp.data.remote.result.SpeciesResult
 import kotlinx.android.synthetic.main.item_planet.view.*
-import kotlinx.android.synthetic.main.item_species.view.*
-import kotlinx.android.synthetic.main.item_starship.view.*
 
 class PlanetAdapter : RecyclerView.Adapter<PlanetAdapter.ViewHolder>(){
     private var listPlanet = ArrayList<PlanetResult>()
@@ -49,13 +47,9 @@ class PlanetAdapter : RecyclerView.Adapter<PlanetAdapter.ViewHolder>(){
                         RequestOptions.placeholderOf(R.drawable.ic_error)
                             .error(R.drawable.ic_error))
                     .into(img_planet)
-//                setOnClickListener {
-//                    val intent = Intent(context, DetailMovieActivity::class.java).apply {
-//                        putExtra(DetailMovieActivity.EXTRA_MOVIE, movie.movieId)
-//                    }
-//                    context.startActivity(intent)
-//                }
-
+                setOnClickListener {
+                    Toast.makeText(context,resources.getString(R.string.page_error), Toast.LENGTH_LONG).show()
+                }
             }
         }
     }

@@ -1,5 +1,6 @@
 package com.onoh.mystarwarsapp.ui.home.ratingmovie
 
+import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -8,17 +9,14 @@ import com.bumptech.glide.Glide
 import com.bumptech.glide.request.RequestOptions
 import com.onoh.mystarwarsapp.R
 import com.onoh.mystarwarsapp.data.local.FilmEntity
-import com.onoh.mystarwarsapp.data.remote.result.FilmResult
+import com.onoh.mystarwarsapp.ui.detail.detailfilm.DetailFilmActivity
 import kotlinx.android.synthetic.main.item_poster_movie.view.*
 
 class HighRatingMovieAdapter : RecyclerView.Adapter<HighRatingMovieAdapter.RatingViewHolder>(){
-    private var listFilm = ArrayList<FilmResult>()
     private var listDummy = ArrayList<FilmEntity>()
 
-    fun setFilm(film: ArrayList<FilmResult>,dummy:List<FilmEntity>){
-        listFilm.clear()
+    fun setFilm(dummy:List<FilmEntity>){
         listDummy.clear()
-        listFilm.addAll(film)
         listDummy.addAll(dummy)
     }
 
@@ -28,31 +26,29 @@ class HighRatingMovieAdapter : RecyclerView.Adapter<HighRatingMovieAdapter.Ratin
     }
 
     override fun onBindViewHolder(holder: RatingViewHolder, position: Int) {
-        val new = listFilm[position]
         val dummy = listDummy[position]
-        holder.bind(new,dummy)
+        holder.bind(dummy,position+1)
     }
 
-    override fun getItemCount(): Int = listFilm.size
+    override fun getItemCount(): Int = listDummy.size
 
     class RatingViewHolder(itemview: View): RecyclerView.ViewHolder(itemview){
-        fun bind(film: FilmResult,dummy:FilmEntity) {
+        fun bind(dummy:FilmEntity,position: Int) {
             with(itemView) {
-                tv_title_high_rating.text = film.title
-                tv_desc_high_rating.text = film.openingCrawl
+                tv_title_high_rating.text = dummy.title
+                tv_desc_high_rating.text = dummy.description
                 Glide.with(context)
                     .load(dummy.imagePath)
                     .apply(
                         RequestOptions.placeholderOf(R.drawable.ic_error)
                             .error(R.drawable.ic_error))
                     .into(img_poster_rating)
-//                setOnClickListener {
-//                    val intent = Intent(context, DetailMovieActivity::class.java).apply {
-//                        putExtra(DetailMovieActivity.EXTRA_MOVIE, movie.movieId)
-//                    }
-//                    context.startActivity(intent)
-//                }
-//
+                setOnClickListener {
+                    val intent = Intent(context, DetailFilmActivity::class.java).apply {
+                        putExtra(DetailFilmActivity.EXTRA_FILM, position)
+                    }
+                    context.startActivity(intent)
+                }
             }
         }
     }

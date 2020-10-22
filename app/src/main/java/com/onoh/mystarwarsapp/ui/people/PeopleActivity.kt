@@ -16,6 +16,7 @@ class PeopleActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_people)
+
         peopleViewModel = ViewModelProvider(this,ViewModelProvider.NewInstanceFactory())[PeopleViewModel::class.java]
         adapter = PeopleAdapter()
         adapter.notifyDataSetChanged()

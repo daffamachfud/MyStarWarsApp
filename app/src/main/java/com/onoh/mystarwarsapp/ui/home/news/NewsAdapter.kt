@@ -1,5 +1,6 @@
 package com.onoh.mystarwarsapp.ui.home.news
 
+import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -18,7 +19,7 @@ class NewsAdapter : RecyclerView.Adapter<NewsAdapter.NewsViewHolder>(){
         listNews.addAll(news)
     }
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): NewsAdapter.NewsViewHolder {
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): NewsViewHolder {
         val view = LayoutInflater.from(parent.context).inflate(R.layout.item_news,parent,false)
         return NewsViewHolder(view)
     }
@@ -35,12 +36,10 @@ class NewsAdapter : RecyclerView.Adapter<NewsAdapter.NewsViewHolder>(){
             with(itemView) {
                 tv_title_news.text = new.title
                 tv_desc_news.text = new.description
-//                setOnClickListener {
-//                    val intent = Intent(context, DetailMovieActivity::class.java).apply {
-//                        putExtra(DetailMovieActivity.EXTRA_MOVIE, movie.movieId)
-//                    }
-//                    context.startActivity(intent)
-//                }
+                setOnClickListener {
+                    val intent = Intent(context, NewsWebActivity::class.java)
+                    context.startActivity(intent)
+                }
                 Glide.with(context)
                     .load(new.imagePath)
                     .apply(

@@ -5,10 +5,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.TextView
 import androidx.fragment.app.Fragment
-import androidx.lifecycle.Observer
-import androidx.lifecycle.ViewModelProviders
 import com.onoh.mystarwarsapp.R
 import com.onoh.mystarwarsapp.ui.film.FilmActivity
 import com.onoh.mystarwarsapp.ui.people.PeopleActivity
@@ -19,8 +16,6 @@ import com.onoh.mystarwarsapp.ui.vehicles.VehiclesActivity
 import kotlinx.android.synthetic.main.item_catalogue.*
 
 class CatalogueFragment : Fragment(), View.OnClickListener {
-
-    private lateinit var catalogueViewModel: CatalogueViewModel
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         return inflater.inflate(R.layout.fragment_catalogue,container,false)

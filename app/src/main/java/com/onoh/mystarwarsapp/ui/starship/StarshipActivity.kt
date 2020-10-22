@@ -6,9 +6,6 @@ import android.view.View
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.onoh.mystarwarsapp.R
-import com.onoh.mystarwarsapp.ui.people.PeopleAdapter
-import com.onoh.mystarwarsapp.ui.people.PeopleViewModel
-import kotlinx.android.synthetic.main.activity_people.*
 import kotlinx.android.synthetic.main.activity_people.progressBar
 import kotlinx.android.synthetic.main.activity_starship.*
 

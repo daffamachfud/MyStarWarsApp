@@ -6,10 +6,6 @@ import android.view.View
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.onoh.mystarwarsapp.R
-import com.onoh.mystarwarsapp.ui.starship.StarshipAdapter
-import com.onoh.mystarwarsapp.ui.starship.StarshipViewModel
-import kotlinx.android.synthetic.main.activity_people.*
-import kotlinx.android.synthetic.main.activity_starship.*
 import kotlinx.android.synthetic.main.activity_starship.progressBar
 import kotlinx.android.synthetic.main.activity_vehicles.*
 
